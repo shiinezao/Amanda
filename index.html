@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Para Amanda — Por Wen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg-wrap" id="bgWrap" aria-hidden="true"></div>
+
+  <header class="brand">
+    <div class="brand-inner">
+      <div class="logo">Wen ♥ Amanda</div>
+      <div class="byline">Um presente feito por mim — com todo carinho</div>
+    </div>
+  </header>
+
+  <main class="stage">
+    <section class="panel left-panel">
+      <div class="card moon-card" id="moonCard" tabindex="0" role="button" aria-label="Lua - Clique para declaração">
+        <div class="moon-emoji">🌙</div>
+        <h3>A Lua para você</h3>
+        <p class="moon-note">Toque a lua para ler uma carta que escrevi com todo o meu amor.</p>
+      </div>
+
+      <div class="card stars-card">
+        <h4>Estrelas que sussurram</h4>
+        <div id="starNotes" class="star-notes"></div>
+        <p class="small">Toque qualquer estrela no céu para ler uma mensagem curta.</p>
+      </div>
+    </section>
+
+    <aside class="panel right-panel">
+      <nav class="nav-tabs" role="tablist">
+        <button class="nav-tab active" data-tab="couples">Casais de Anime</button>
+        <button class="nav-tab" data-tab="poems">Mini Poemas</button>
+        <button class="nav-tab" data-tab="ilang">Eu te amo (muitas línguas)</button>
+        <button class="nav-tab" data-tab="about">Minha Confiança</button>
+      </nav>
+
+      <div class="tabs-content">
+        <div id="couples" class="tab active">
+          <h3>Casais que nos representam</h3>
+          <p class="hint">Arraste ou clique para enviar imagens. Eu personalizo cada cartão.</p>
+          <div id="coupleGrid" class="couple-grid">
+            <div class="couple-card"><div class="img" data-src="">Clique para enviar</div><div class="meta"><strong>Casal A</strong><span>Nosso jeitinho</span></div></div>
+            <div class="couple-card"><div class="img" data-src="">Clique para enviar</div><div class="meta"><strong>Casal B</strong><span>Nosso carinho</span></div></div>
+            <div class="couple-card"><div class="img" data-src="">Clique para enviar</div><div class="meta"><strong>Casal C</strong><span>Nosso abraço</span></div></div>
+          </div>
+        </div>
+
+        <div id="poems" class="tab">
+          <h3>Mini Poemas</h3>
+          <div id="poemsGrid" class="poems-grid"></div>
+        </div>
+
+        <div id="ilang" class="tab">
+          <h3>Eu te amo — em muitas línguas</h3>
+          <div id="heartsRow" class="hearts-row"></div>
+          <div id="ilangPhrase" class="ilang-phrase">Clique em um coração para ver a frase.</div>
+        </div>
+
+        <div id="about" class="tab">
+          <h3>Minha Confiança & Amor</h3>
+          <p class="declaration">Amanda, confio em você com toda a sinceridade do meu peito. Eu, Wendy (Wen), escolho você todos os dias — nas escolhas pequenas e nas grandes. Quero estar ao seu lado, proteger suas alegrias, dividir seus medos e celebrar seus sonhos. Te amo mais do que palavras conseguem segurar; minha confiança é a promessa de estar aqui, sempre.</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-inner">Feito por <strong>Wen</strong> — inspirado por você, Amanda. ♥</div>
+  </footer>
+
+  <input id="fileInput" type="file" accept="image/*" style="display:none" multiple />
+
+  <div id="moonModal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-card">
+      <button id="closeModal" class="close">✕</button>
+      <h2>Para Amanda — da parte de Wen</h2>
+      <div id="moonText" class="moon-text"></div>
+      <div class="signature">Com amor — <strong>Wen</strong></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

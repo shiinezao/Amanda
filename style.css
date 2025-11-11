@@ -1,0 +1,68 @@
+:root{
+  --bg-1: #0b1220;
+  --bg-2: #07112a;
+  --soft: #f8eef6;
+  --accent:#ff7aa2;
+  --muted: rgba(248,238,246,0.85);
+  --card: rgba(255,255,255,0.04);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Montserrat,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,var(--bg-1),var(--bg-2));color:var(--soft);-webkit-font-smoothing:antialiased;}
+
+.bg-wrap{
+  position:fixed;inset:0;background-image:url('https://upload.wikimedia.org/wikipedia/commons/e/ea/The_Starry_Night.jpg');background-size:cover;background-position:center;opacity:0.16;filter:saturate(95%);z-index:0;
+  transform-origin:center;animation:slowZoom 40s linear infinite;
+}
+@keyframes slowZoom{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+
+.brand{position:relative;z-index:2;padding:20px 18px 4px;text-align:center}
+.logo{font-family:'Playfair Display',serif;font-size:22px;letter-spacing:0.6px}
+.byline{font-size:13px;color:var(--muted);margin-top:6px}
+
+.stage{position:relative;z-index:2;display:flex;gap:22px;max-width:1200px;margin:18px auto;padding:12px;width:calc(100% - 36px)}
+
+.left-panel{flex:0 0 360px;display:flex;flex-direction:column;gap:14px}
+.card{background:var(--card);padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 40px rgba(2,6,23,0.6)}
+.moon-card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;transition:transform .25s ease}
+.moon-card:hover{transform:translateY(-6px)}
+.moon-emoji{font-size:44px;margin-bottom:8px}
+.moon-note{color:var(--muted);font-size:14px}
+
+.stars-card h4{margin:0 0 8px}
+.star-notes{display:flex;flex-direction:column;gap:8px;max-height:220px;overflow:auto;padding-right:6px}
+.star-item{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:8px 10px;border-radius:999px;color:var(--muted);font-size:13px;border:1px solid rgba(255,255,255,0.02)}
+
+.right-panel{flex:1;display:flex;flex-direction:column;gap:12px}
+.nav-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.nav-tab{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);cursor:pointer;color:var(--muted)}
+.nav-tab.active{background:linear-gradient(90deg,var(--accent),#7ad7ff);color:white;box-shadow:0 12px 40px rgba(0,0,0,0.45)}
+
+.couple-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:12px}
+.couple-card{border-radius:12px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;flex-direction:column;min-height:160px}
+.couple-card .img{flex:1;background:linear-gradient(180deg,#0b1220,#07112a);display:flex;align-items:center;justify-content:center;color:var(--muted);padding:12px;background-size:cover;background-position:center}
+.couple-card .meta{padding:10px;border-top:1px solid rgba(255,255,255,0.02)}
+
+.poems-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:12px}
+.poem-card{padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));color:var(--muted)}
+
+.hearts-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.lang-heart{width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;color:white;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,0.45);transition:transform .12s}
+.lang-heart:active{transform:scale(0.95)}
+.ilang-phrase{margin-top:12px;padding:10px;border-radius:10px;background:rgba(0,0,0,0.35);text-align:center;color:var(--muted);font-weight:600}
+
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,15,0.6);z-index:999;opacity:0;pointer-events:none;transition:opacity .2s}
+.modal.show{opacity:1;pointer-events:auto}
+.modal-card{background:#fff;padding:18px;border-radius:12px;max-width:780px;width:calc(100% - 40px);color:#111;box-shadow:0 20px 60px rgba(2,6,23,0.6)}
+.close{position:absolute;right:22px;top:22px;background:none;border:none;font-size:18px;cursor:pointer}
+.moon-text{line-height:1.6}
+
+.foot{padding:20px 12px;text-align:center;z-index:2}
+.foot-inner{font-weight:600;background:linear-gradient(90deg,#ff9fb7,#ff6b9a);display:inline-block;padding:10px 12px;border-radius:10px;color:white}
+
+@media (max-width:900px){
+  .stage{flex-direction:column;padding:12px}
+  .left-panel{width:100%;order:2}
+  .right-panel{order:1}
+  .moon-emoji{font-size:40px}
+}
